@@ -1,0 +1,28 @@
+<h1>Edit</h1>
+<form ng-submit="usersEdit.submit()">
+  <div class="form-group">
+    <input class="form-control" type="text" name="username" ng-model="usersEdit.user.username" placeholder="Username">
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="text" name="first_name" ng-model="usersEdit.user.first_name" placeholder="First Name">
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="text" name="last_name" ng-model="usersEdit.user.last_name" placeholder="Last Name">
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="email" name="email" ng-model="usersEdit.user.email" placeholder="Email">
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="text" name="image" ng-model="usersEdit.user.image" placeholder="Profile Picture">
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="text" name="team" ng-model="usersEdit.user.team" placeholder="What team do you support?">
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="password" name="password" ng-model="usersEdit.user.password" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="password" name="password_confirmation" ng-model="usersEdit.user.password_confirmation" placeholder="Password confirmation">
+  </div>
+  <input class="btn btn-primary" type="submit" value="Submit" />
+</form>
