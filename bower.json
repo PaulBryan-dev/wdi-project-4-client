@@ -1,12 +1,12 @@
 {
-  "name": "wdi-project-3",
-  "description": "WDI Group project Sam Paul Ryan Will - GIT MASTER",
-  "main": "index.js",
+  "name": "seatswap",
+  "description": "",
+  "main": "server.js",
   "authors": [
-    "zuspadt79 <samuel.hey@gmail.com>"
+    "PaulBryan2007 <PaulBryan2007@gmail.com>"
   ],
   "license": "ISC",
-  "homepage": "https://github.com/willmarps/wdi-project-3",
+  "homepage": "",
   "ignore": [
     "**/.*",
     "node_modules",

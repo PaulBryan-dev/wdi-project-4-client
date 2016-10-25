@@ -1,34 +1,15 @@
 {
-  "name": "wdi-project-3",
+  "name": "seatswap",
   "version": "1.0.0",
-  "description": "WDI Group project Sam Paul Ryan Will - GIT MASTER",
-  "main": "index.js",
+  "description": "",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/willmarps/wdi-project-3.git"
-  },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/willmarps/wdi-project-3/issues"
-  },
-  "homepage": "https://github.com/willmarps/wdi-project-3#readme",
   "dependencies": {
-    "aws-sdk": "^2.6.6",
-    "bcrypt": "^0.8.7",
-    "body-parser": "^1.15.2",
-    "cors": "^2.8.1",
-    "express": "^4.14.0",
-    "express-jwt": "^5.0.0",
-    "jsonwebtoken": "^7.1.9",
-    "mongoose": "^4.6.1",
-    "morgan": "^1.7.0",
-    "multer": "^1.2.0",
-    "multer-s3": "^2.3.2",
-    "validator": "^6.0.0"
+    "express": "^4.14.0"
   },
   "devDependencies": {
     "babel-cli": "^6.16.0",
