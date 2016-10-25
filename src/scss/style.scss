@@ -1,0 +1,162 @@
+@import "bower";
+@import "typo";
+@import "homepage";
+@import "threads";
+
+body {
+  -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   text-align: center;
+   background: #f2f2f2;
+   font-family: 'Raleway', sans-serif;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.showPageHeading {
+  font-family: sans-serif;
+  text-align: center;
+  width: 60px;
+  border-radius: 20px;
+  border: solid 2px #333;
+  padding: 20px 10px;
+
+}
+
+.threadimg {
+  width: 200px;
+
+}
+
+.list-inline {
+  margin-bottom: 15px;
+}
+
+.homepage {
+  width: 100%;
+  height: 100vh;
+  background: url("https://static.pexels.com/photos/5156/people-eiffel-tower-lights-night.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: #fff;
+
+}
+
+.navbar {
+  margin-bottom: 0 !important;
+
+}
+
+.nav.navbar-nav.navbar-right li a {
+    color: rgba(171,7,84,1);
+}
+
+div.audioRecorder {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.navbar-brand {
+  font-family: "LOUDNOISE";
+  font-size: 3.5em;
+  background: -webkit-linear-gradient(#FF1300, #7F007F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.frontpagelogo {
+  font-family: "LOUDNOISE";
+  font-size: 9em;
+  background: -webkit-linear-gradient(#FF1300, #7F007F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-color: rgba(255,255,255,.3)
+}
+
+.navbar-toggle {
+  background-color: #ab0754;
+}
+
+.form-group {
+   width: 60%;
+   margin: 0 auto;
+   padding: 5px;
+ }
+
+ div.audioRecorder {
+   width: 400px;
+   height: 75px;
+   margin: 25px auto 25px auto;
+   padding: 30px;
+   border-radius: 5px;
+   background-color: rgba(171,7,84,.7);
+}
+
+.vemes {
+  columns: 3;
+  width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.vemeavatar {
+  width: 200px;
+  margin: 15px;
+  border-radius: 5px;
+
+}
+
+.reply-container {
+  background-color: #FFF;
+  width: 800px;
+  margin: 10px auto 10px auto;
+  display: block;
+  padding: 15px;
+  background-color: #FFF;
+  border: 5px solid rgba(150,150,150,.4);
+  border-radius: 5px;
+
+  img.threadimg {
+    border-radius: 5px;
+    width: 500px;
+  }
+}
+
+.reply-prompt {
+  margin-top: -35px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  margin: 0px auto;
+  padding-bottom: 5px;
+  font-weight: bold;
+}
+
+.recbuttons {
+  margin-top: -20px;
+}
+
+.threadcontainer {
+  margin-top: 70px;
+  color: #ab0754;
+}
+
+button {
+  margin-bottom: 5px;
+}
+
+
+// .centered {
+//     background-image: url("https://static.pexels.com/photos/5156/people-eiffel-tower-lights-night.jpg");
+//     background-size: cover;
+//     background-repeat: no-repeat;
+// }

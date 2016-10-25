@@ -1,0 +1,28 @@
+<h2>Post Veme</h2>
+<form ng-submit="threads.submit()">
+  <div class="form-group">
+    <label>Name</label>
+    <input ng-model="threads.thread.title" class="form-control" placeholder="Give your Veme a descriptive title (Max 25 characters)" maxlength="25">
+  </div>
+  <div class="form-group">
+    <label>Image</label>
+    <input ng-model="threads.thread.image" class="form-control" placeholder="Provide a link for an image that descibes your Veme">
+  </div>
+  <ng-audio-recorder
+   id='audioInput'
+   audio-model='threads.audio'
+   on-conversion-complete="threads.finishedConverting()">
+    <div ng-if="recorder.isAvailable">
+      <button ng-click="recorder.startRecord()" type="button" ng-disabled="recorder.status.isRecording">
+        Start Record
+      </button>
+      <button ng-click="recorder.stopRecord()" type="button" ng-disabled="recorder.status.isRecording === false">
+        Stop Record
+      </button>
+      <button ng-click="recorder.playbackRecording()" type="button" ng-disabled="recorder.status.isRecording || !recorder.audioModel">
+        Play Back
+      </button>
+    </div>
+  </ng-audio-recorder>
+  <input type="submit" value="Add" class="btn btn-primary">
+</form>
