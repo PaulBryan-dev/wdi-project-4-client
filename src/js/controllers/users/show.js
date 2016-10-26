@@ -1,5 +1,5 @@
 angular
-  .module("SpursSwap")
+  .module("seatSwap")
   .controller("usersShowCtrl", usersShowCtrl);
 
 usersShowCtrl.$inject = ["User", "$stateParams", "$state"];

@@ -1,5 +1,5 @@
 angular
-  .module("SpursSwap")
+  .module("seatSwap")
   .service("CurrentUserService", CurrentUserService);
 
 CurrentUserService.$inject = ["$rootScope", "TokenService", "User"];

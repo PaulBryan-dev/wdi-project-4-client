@@ -1,5 +1,5 @@
 angular
-  .module("SpursSwap")
+  .module("seatSwap")
   .factory("AuthInterceptor", AuthInterceptor);
 
 AuthInterceptor.$inject = ["API", "TokenService"];

@@ -1,5 +1,5 @@
 angular
-  .module("SpursSwap")
+  .module("seatSwap")
   .controller("mainCtrl", mainCtrl);
 
 mainCtrl.$inject = ["$rootScope", "CurrentUserService", "$state"];

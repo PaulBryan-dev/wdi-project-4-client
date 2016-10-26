@@ -1,5 +1,5 @@
 angular
-  .module("SpursSwap")
+  .module("seatSwap")
   .config(setUpInterceptor);
 
 setUpInterceptor.$inject = ["$httpProvider"];

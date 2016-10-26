@@ -1,5 +1,5 @@
 angular
-  .module("SpursSwap")
+  .module("seatSwap")
   .factory("User", userFactory);
 
 userFactory.$inject = ["API", "$resource"];

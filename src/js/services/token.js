@@ -1,5 +1,5 @@
 angular
-  .module("SpursSwap")
+  .module("seatSwap")
   .service("TokenService", TokenService);
 
 TokenService.$inject =  ["$window", "jwtHelper"];

@@ -1,5 +1,5 @@
 angular
-  .module("SpursSwap")
+  .module("seatSwap")
   .config(Router);
 
 Router.$inject = ["$stateProvider", "$urlRouterProvider", "$locationProvider"];
@@ -32,6 +32,11 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider){
       url: "/users/:id/edit",
       templateUrl: "/js/views/users/edit.html",
       controller: "usersEditCtrl as usersEdit"
+    })
+    .state("ticketsIndex", {
+      url: "/tickets",
+      templateUrl: "/js/views/tickets/index.html",
+      controller: "ticketsIndexCtrl as index"
     })
 
     // .state("usersIndex", {

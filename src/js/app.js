@@ -1,5 +1,5 @@
 angular
-  .module("SpursSwap", [
+  .module("seatSwap", [
     "ui.router",
     "ngResource",
     "angular-jwt"

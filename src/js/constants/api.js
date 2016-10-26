@@ -1,3 +1,3 @@
 angular
-  .module("SpursSwap")
+  .module("seatSwap")
   .constant("API", `http://localhost:3000/api`);

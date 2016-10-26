@@ -1,5 +1,5 @@
 angular
-  .module("SpursSwap")
+  .module("seatSwap")
   .controller("registerCtrl", registerCtrl);
 
 registerCtrl.$inject = ["User", "CurrentUserService"];

@@ -1,22 +1,48 @@
 <!DOCTYPE html>
-<html ng-app="SpursSwap">
-  <head>
-    <meta charset="utf-8">
-    <title>SeatSwap</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <script type="text/javascript" src="/js/app.js"></script>
-    <base href="/" />
-  </head>
-  <body ng-controller="mainCtrl as main">
-    <nav>
-      <ul>
-        <li><a ui-sref="home">Home</a></li>
-        <li ng-hide="main.user"><a ui-sref="login">Login</a></li>
-        <li ng-hide="main.user"><a ui-sref="register">Register</a></li>
-        <li ng-show="main.user"><a ui-sref="usersShow({ id: main.user.id })">Profile</a></li>
-        <li ng-show="main.user"><a ng-click="main.logout()">Logout</a></li>
-      </ul>
-    </nav>
-    <main class="container" ui-view></main>
-  </body>
+<html ng-app="seatSwap">
+<head>
+  <meta charset="utf-8">
+  <title>SeatSwap</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="text/javascript" src="/js/app.js"></script>
+  <base href="/" />
+</head>
+<body ng-controller="mainCtrl as main">
+  <!-- <nav>
+    <ul>
+      <li><a ui-sref="home">Home</a></li>
+      <li ng-hide="main.user"><a ui-sref="login">Login</a></li>
+      <li ng-hide="main.user"><a ui-sref="register">Register</a></li>
+      <li ng-show="main.user"><a ui-sref="usersShow({ id: main.user.id })">Profile</a></li>
+      <li ng-show="main.user"><a ng-click="main.logout()">Logout</a></li>
+    </ul>
+  </nav> -->
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="http://i.imgur.com/9BtPHGX.png">
+          <img alt="Brand" src="http://i.imgur.com/VEcnukN.png">
+        </a>
+        <nav>
+          <ul>
+            <li><a ui-sref="home">Home</a></li>
+            <li ng-hide="main.user"><a ui-sref="login">Login</a></li>
+            <li ng-hide="main.user"><a ui-sref="register">Register</a></li>
+            <li ng-show="main.user"><a ui-sref="usersShow({ id: main.user.id })">Profile</a></li>
+            <li ng-show="main.user"><a ng-click="main.logout()">Logout</a></li>
+          </ul>
+        </nav>
+
+      </a>
+    </div>
+  </div>
+</nav>
+</div>
+</div>
+</nav>
+
+
+<main class="container" ui-view></main>
+</body>
 </html>

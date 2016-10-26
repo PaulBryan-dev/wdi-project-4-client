@@ -50189,37 +50189,21 @@ if (typeof jQuery === 'undefined') {
 
 }(jQuery);
 
-"use strict";angular.module("SpursSwap",["ui.router","ngResource","angular-jwt"]);
-"use strict";angular.module("SpursSwap").constant("API","http://localhost:3000/api");
-"use strict";angular.module("SpursSwap").factory("AuthInterceptor",AuthInterceptor);AuthInterceptor.$inject=["API","TokenService"];function AuthInterceptor(API,TokenService){return{request:function request(config){var token=TokenService.getToken();if(config.url.indexOf(API)===0&&token){config.headers.Authorization="Bearer "+token;}return config;},response:function response(res){if(res.config.url.indexOf(API)===0&&res.data.token){TokenService.setToken(res.data.token);}return res;}};}
-"use strict";angular.module("SpursSwap").service("CurrentUserService",CurrentUserService);CurrentUserService.$inject=["$rootScope","TokenService","User"];function CurrentUserService($rootScope,TokenService,User){var currentUser=TokenService.decodeToken();if(currentUser){currentUser=User.get(currentUser);}return{user:currentUser,saveUser:function saveUser(user){currentUser=user;$rootScope.$broadcast("loggedIn");},getUser:function getUser(){return currentUser;},clearUser:function clearUser(){currentUser=null;TokenService.clearToken();$rootScope.$broadcast("loggedOut");}};}
-"use strict";angular.module("SpursSwap").controller("usersEditCtrl",usersEditCtrl);usersEditCtrl.$inject=["User","$stateParams","$state"];function usersEditCtrl(User,$stateParams,$state){var vm=this;vm.user=User.get($stateParams);vm.submit=function(){console.log("submit edit");User.update($stateParams,{user:vm.user}).$promise.then(function(data){$state.go("usersShow",$stateParams);});};}// angular
-//  .module("loveOnTheLineApp")
-//  .controller("usersEditCtrl", usersEditCtrl);
-//
-// usersEditCtrl.$inject = ["User", "$stateParams", "$state"];
-// function usersEditCtrl(User, $stateParams, $state) {
-//  const vm = this;
-//
-//  User.get($stateParams, data => {
-//    vm.user = data;
-//  });
-//
-//  vm.submit = () => {
-//    console.log("submit edit");
-//    User
-//    .update($stateParams, { user: vm.user })
-//    .$promise
-//    .then(data => {
-//      $state.go("usersShow", $stateParams);
-//    });
-//  };
-// }
-"use strict";angular.module("SpursSwap").config(setUpInterceptor);setUpInterceptor.$inject=["$httpProvider"];function setUpInterceptor($httpProvider){return $httpProvider.interceptors.push("AuthInterceptor");}
-"use strict";angular.module("SpursSwap").controller("loginCtrl",loginCtrl);loginCtrl.$inject=["User","CurrentUserService"];function loginCtrl(User,CurrentUserService){var vm=this;vm.login=function(){console.log(vm.user);User.login(vm.user).$promise.then(function(data){var user=data.user?data.user:null;if(user){CurrentUserService.saveUser(user);}});};}
-"use strict";angular.module("SpursSwap").controller("mainCtrl",mainCtrl);mainCtrl.$inject=["$rootScope","CurrentUserService","$state"];function mainCtrl($rootScope,CurrentUserService,$state){var vm=this;vm.user=CurrentUserService.getUser();vm.logout=function(){event.preventDefault();CurrentUserService.clearUser();};$rootScope.$on("loggedIn",function(){vm.user=CurrentUserService.getUser();$state.go("threadsIndex");});$rootScope.$on("loggedOut",function(){vm.user=null;$state.go("home");});}
-"use strict";angular.module("SpursSwap").controller("registerCtrl",registerCtrl);registerCtrl.$inject=["User","CurrentUserService"];function registerCtrl(User,CurrentUserService){var vm=this;vm.register=function(){User.register(vm.user).$promise.then(function(data){var user=data.user?data.user:null;if(user){CurrentUserService.saveUser(user);}});};}
-"use strict";angular.module("SpursSwap").config(Router);Router.$inject=["$stateProvider","$urlRouterProvider","$locationProvider"];function Router($stateProvider,$urlRouterProvider,$locationProvider){$locationProvider.html5Mode(true);$stateProvider.state("home",{url:"/",templateUrl:"/js/views/homepage.html"}).state("register",{url:"/register",templateUrl:"/js/views/authentications/register.html",controller:"registerCtrl as register"}).state("login",{url:"/login",templateUrl:"/js/views/authentications/login.html",controller:"loginCtrl as login"}).state("usersShow",{url:"/users/:id",templateUrl:"/js/views/users/show.html",controller:"usersShowCtrl as usersShow"}).state("usersEdit",{url:"/users/:id/edit",templateUrl:"/js/views/users/edit.html",controller:"usersEditCtrl as usersEdit"})// .state("usersIndex", {
+"use strict";angular.module("seatSwap",["ui.router","ngResource","angular-jwt"]);
+"use strict";angular.module("seatSwap").constant("API","http://localhost:3000/api");
+"use strict";angular.module("seatSwap").factory("AuthInterceptor",AuthInterceptor);AuthInterceptor.$inject=["API","TokenService"];function AuthInterceptor(API,TokenService){return{request:function request(config){var token=TokenService.getToken();if(config.url.indexOf(API)===0&&token){config.headers.Authorization="Bearer "+token;}return config;},response:function response(res){if(res.config.url.indexOf(API)===0&&res.data.token){TokenService.setToken(res.data.token);}return res;}};}
+"use strict";angular.module("seatSwap").service("CurrentUserService",CurrentUserService);CurrentUserService.$inject=["$rootScope","TokenService","User"];function CurrentUserService($rootScope,TokenService,User){var currentUser=TokenService.decodeToken();if(currentUser){currentUser=User.get(currentUser);}return{user:currentUser,saveUser:function saveUser(user){currentUser=user;$rootScope.$broadcast("loggedIn");},getUser:function getUser(){return currentUser;},clearUser:function clearUser(){currentUser=null;TokenService.clearToken();$rootScope.$broadcast("loggedOut");}};}
+"use strict";angular.module("seatSwap").controller("usersEditCtrl",usersEditCtrl);usersEditCtrl.$inject=["User","$stateParams","$state"];function usersEditCtrl(User,$stateParams,$state){var vm=this;vm.user=User.get($stateParams);vm.submit=function(){console.log("submit edit");User.update($stateParams,{user:vm.user}).$promise.then(function(data){$state.go("usersShow",$stateParams);});};}
+"use strict";
+"use strict";angular.module("seatSwap").controller("ticketsEditCtrl",ticketsEditCtrl);ticketsEditCtrl.$inject=["Ticket","$stateParams","$state"];function ticketsEditCtrl(Ticket,$stateParams,$state){var vm=this;vm.ticket=Ticket.get($stateParams);vm.submit=function(){console.log("submit edit");Ticket.update($stateParams,{ticket:vm.ticket}).$promise.then(function(data){$state.go("ticketsShow",$stateParams);});};}
+"use strict";angular.module("seatSwap").controller("ticketsIndexCtrl",ticketsIndexCtrl);ticketsIndexCtrl.$inject=["Ticket","$stateParams","$state"];function ticketsIndexCtrl(Ticket,$stateParams,$state){var vm=this;Ticket.query().$promise.then(function(data){console.log(data);});}
+"use strict";angular.module("seatSwap").config(setUpInterceptor);setUpInterceptor.$inject=["$httpProvider"];function setUpInterceptor($httpProvider){return $httpProvider.interceptors.push("AuthInterceptor");}
+"use strict";angular.module("seatSwap").controller("loginCtrl",loginCtrl);loginCtrl.$inject=["User","CurrentUserService"];function loginCtrl(User,CurrentUserService){var vm=this;vm.login=function(){console.log(vm.user);User.login(vm.user).$promise.then(function(data){var user=data.user?data.user:null;if(user){CurrentUserService.saveUser(user);}});};}
+"use strict";angular.module("seatSwap").controller("mainCtrl",mainCtrl);mainCtrl.$inject=["$rootScope","CurrentUserService","$state"];function mainCtrl($rootScope,CurrentUserService,$state){var vm=this;vm.user=CurrentUserService.getUser();vm.logout=function(){event.preventDefault();CurrentUserService.clearUser();};$rootScope.$on("loggedIn",function(){vm.user=CurrentUserService.getUser();$state.go("threadsIndex");});$rootScope.$on("loggedOut",function(){vm.user=null;$state.go("home");});}
+"use strict";
+"use strict";
+"use strict";angular.module("seatSwap").controller("registerCtrl",registerCtrl);registerCtrl.$inject=["User","CurrentUserService"];function registerCtrl(User,CurrentUserService){var vm=this;vm.register=function(){User.register(vm.user).$promise.then(function(data){var user=data.user?data.user:null;if(user){CurrentUserService.saveUser(user);}});};}
+"use strict";angular.module("seatSwap").config(Router);Router.$inject=["$stateProvider","$urlRouterProvider","$locationProvider"];function Router($stateProvider,$urlRouterProvider,$locationProvider){$locationProvider.html5Mode(true);$stateProvider.state("home",{url:"/",templateUrl:"/js/views/homepage.html"}).state("register",{url:"/register",templateUrl:"/js/views/authentications/register.html",controller:"registerCtrl as register"}).state("login",{url:"/login",templateUrl:"/js/views/authentications/login.html",controller:"loginCtrl as login"}).state("usersShow",{url:"/users/:id",templateUrl:"/js/views/users/show.html",controller:"usersShowCtrl as usersShow"}).state("usersEdit",{url:"/users/:id/edit",templateUrl:"/js/views/users/edit.html",controller:"usersEditCtrl as usersEdit"}).state("ticketsIndex",{url:"/tickets",templateUrl:"/js/views/tickets/index.html",controller:"ticketsIndexCtrl as index"})// .state("usersIndex", {
 //   url: "/users",
 //   templateUrl: "/js/views/users/index.html",
 //   controller: "usersIndexCtrl as usersIndex",
@@ -50246,6 +50230,9 @@ if (typeof jQuery === 'undefined') {
 //     controller: "ThreadsEditCtrl as threads"
 // 	})
 ;$urlRouterProvider.otherwise("/");}
-"use strict";angular.module("SpursSwap").controller("usersShowCtrl",usersShowCtrl);usersShowCtrl.$inject=["User","$stateParams","$state"];function usersShowCtrl(User,$stateParams,$state){var vm=this;vm.user=User.get($stateParams);vm.delete=function(){User.delete($stateParams).$promise.then(function(data){$state.go("home");});};}
-"use strict";angular.module("SpursSwap").service("TokenService",TokenService);TokenService.$inject=["$window","jwtHelper"];function TokenService($window,jwtHelper){var self=this;self.setToken=setToken;self.getToken=getToken;self.decodeToken=decodeToken;self.clearToken=clearToken;function setToken(token){return $window.localStorage.setItem("auth-token",token);}function getToken(){return $window.localStorage.getItem("auth-token");}function decodeToken(){var token=self.getToken();return token?jwtHelper.decodeToken(token):null;}function clearToken(){return $window.localStorage.removeItem("auth-token");}}
-"use strict";angular.module("SpursSwap").factory("User",userFactory);userFactory.$inject=["API","$resource"];function userFactory(API,$resource){return $resource(API+"/users/:id",{id:"@id"},{"query":{method:"GET",isArray:false},"update":{method:"PUT"},"register":{method:"POST",url:API+"/register"},"login":{method:"POST",url:API+"/login"}});}
+"use strict";angular.module("seatSwap").controller("ticketsShowCtrl",ticketsShowCtrl);ticketsShowCtrl.$inject=["Ticket","$stateParams","$state"];function ticketsShowCtrl(Ticket,$stateParams,$state){var vm=this;vm.ticket=Ticket.get($stateParams);vm.delete=function(){Ticket.delete($stateParams).$promise.then(function(data){$state.go("home");});};}
+"use strict";angular.module("seatSwap").controller("usersShowCtrl",usersShowCtrl);usersShowCtrl.$inject=["User","$stateParams","$state"];function usersShowCtrl(User,$stateParams,$state){var vm=this;vm.user=User.get($stateParams);vm.delete=function(){User.delete($stateParams).$promise.then(function(data){$state.go("home");});};}
+"use strict";
+"use strict";angular.module("seatSwap").factory("Ticket",ticketFactory);ticketFactory.$inject=["API","$resource"];function ticketFactory(API,$resource){return $resource(API+"/tickets/:id",{id:"@id"},{"query":{method:"GET",isArray:true},"update":{method:"PUT"}});}
+"use strict";angular.module("seatSwap").service("TokenService",TokenService);TokenService.$inject=["$window","jwtHelper"];function TokenService($window,jwtHelper){var self=this;self.setToken=setToken;self.getToken=getToken;self.decodeToken=decodeToken;self.clearToken=clearToken;function setToken(token){return $window.localStorage.setItem("auth-token",token);}function getToken(){return $window.localStorage.getItem("auth-token");}function decodeToken(){var token=self.getToken();return token?jwtHelper.decodeToken(token):null;}function clearToken(){return $window.localStorage.removeItem("auth-token");}}
+"use strict";angular.module("seatSwap").factory("User",userFactory);userFactory.$inject=["API","$resource"];function userFactory(API,$resource){return $resource(API+"/users/:id",{id:"@id"},{"query":{method:"GET",isArray:false},"update":{method:"PUT"},"register":{method:"POST",url:API+"/register"},"login":{method:"POST",url:API+"/login"}});}
