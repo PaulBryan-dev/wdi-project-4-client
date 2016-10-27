@@ -1,0 +1,9 @@
+<h1>Games</h1>
+<ul>
+  <li ng-repeat="game in index.games track by $index">
+    <ul>
+      <li>{{ game.home }} vs {{ game.away }} on {{ game.date }}</li>
+      <li><a ui-sref="swapsNew({ id: game.id })">Swap</a></li>
+    </ul>
+  </li>
+</ul>

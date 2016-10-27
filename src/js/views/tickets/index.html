@@ -1,1 +1,8 @@
 <h1>Tickets</h1>
+<ul>
+  <li ng-repeat="ticket in index.tickets track by $index">
+    <ul>
+      <li>{{ ticket }}</li>
+    </ul>
+  </li>
+</ul>

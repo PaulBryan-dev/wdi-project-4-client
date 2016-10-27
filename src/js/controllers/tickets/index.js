@@ -6,11 +6,5 @@ ticketsIndexCtrl.$inject = ["Ticket", "$stateParams", "$state"];
 function ticketsIndexCtrl(Ticket, $stateParams, $state) {
   const vm = this;
 
-  Ticket
-  .query()
-  .$promise
-  .then((data) => {
-    console.log(data);
-  });
-
+  vm.tickets = Ticket.query();
 }

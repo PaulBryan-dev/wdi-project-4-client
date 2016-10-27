@@ -16,6 +16,7 @@ function CurrentUserService($rootScope, TokenService, User){
       $rootScope.$broadcast("loggedIn");
     },
     getUser() {
+      console.log("HERE")
       return currentUser;
     },
     clearUser() {

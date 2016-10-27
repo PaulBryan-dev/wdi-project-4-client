@@ -1,28 +1,14 @@
 @import 'bower';
 
-body {
-  font-family: "basic title font";
-  background-color: #EBF2FA;
-}
-
-h1 {
-  font-size: 3.5em;
-}
-
-ul, li {
-  display: inline-block;
-  margin-left: 50px;
-  font-size: 1.2em;
-}
-
-// h5 {
-//   font-family: "EnglishFootballClubBadges";
-//   font-size: 3em;
+// body {
+//   font-family: "basic title font";
+//   background-color: #EBF2FA;
 // }
-
-.navbar navbar-default {
-  display: inline-block;
-  padding: 10px;
-  font-size: 1.2em;
-
+//
+// h1 {
+//   font-size: 3.5em;
+// }
+//
+.navbar-header {
+  height: 80px;
 }
