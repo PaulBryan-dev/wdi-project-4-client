@@ -1,6 +1,6 @@
 angular
-  .module("seatSwap")
-  .controller("mainCtrl", mainCtrl);
+.module("seatSwap")
+.controller("mainCtrl", mainCtrl);
 
 mainCtrl.$inject = ["$rootScope", "CurrentUserService", "$state"];
 function mainCtrl($rootScope, CurrentUserService, $state) {
@@ -22,4 +22,6 @@ function mainCtrl($rootScope, CurrentUserService, $state) {
     vm.user = null;
     $state.go("home");
   });
+
+  
 }

@@ -1,0 +1,32 @@
+.navbar {
+  background: $white;
+  line-height: 60px !important;
+  height: 60px !important;
+  border: 0;
+  font-size: 16px;
+  color: $almostBlack !important;
+
+  .navbar-brand {
+    font-family: $logo-font;
+    font-size: 30px;
+    color: $orange !important;
+
+    &:hover {
+      color: $orange !important;
+    }
+  }
+
+  a, li {
+    line-height: 60px !important;
+    height: 60px !important;
+    padding: 0 1rem !important;
+
+    &:last-child {
+      padding-right: 0;
+    }
+    &:first-child {
+      padding-left: 0;
+    }
+  }
+
+}

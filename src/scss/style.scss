@@ -1,32 +1,8 @@
 @import 'bower';
 
-body {
-  background-color: #EBF2FA;
-  padding-top: 70px; 
-}
-//
-// h1 {
-//   font-size: 3.5em;
-// }
-//
-.navbar-header {
-  height: 80px;
-}
+@import "variables";
+@import "base";
 
-
-.navbar-fixed-top {
-    min-height: 80px;
-}
-
-.navbar-nav > li > a {
-    padding-top: 0px;
-    padding-bottom: 0px;
-    line-height: 80px;
-}
-
-@media (max-width: 767px) {
-    .navbar-nav > li > a {
-    line-height: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;}
-}
+@import "modules/header";
+@import "modules/buttons";
+@import "images";

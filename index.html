@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>SeatSwap</title>
+  <link href="https://fonts.googleapis.com/css?family=Bungee|Montserrat:700|Work+Sans" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
   <script type="text/javascript" src="/js/app.js"></script>
   <base href="/" />
@@ -19,7 +20,8 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" ui-sref="home">
-            <img alt="Brand" src="http://i.imgur.com/VMQ17AB.png">
+            <!-- <img alt="Brand" src="http://i.imgur.com/VMQ17AB.png"> -->
+            SeatSwap
           </div>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
@@ -33,14 +35,10 @@
                 <a ui-sref="gamesIndex">Find a game</a>
               </li>
               <li ng-show="main.user">
-                <a ui-sref="ticketsIndex">Browse tickets</a>
+                <a ui-sref="usersShow({ id: main.user.id })">Profile</a>
               </li>
-              <li class="dropdown" ng-show="main.user">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a ui-sref="usersShow({ id: main.user.id })">Profile</a></li>
-                  <li><a ui-sref="ticketsNew">Add Ticket</a></li>
-                </ul>
+              <li ng-show="main.user">
+                <a ui-sref="ticketsNew">Add Ticket</a>
               </li>
               <li ng-show="main.user">
                 <a ng-click="main.logout()">Logout</a>

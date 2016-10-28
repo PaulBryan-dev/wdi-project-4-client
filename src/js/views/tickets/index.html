@@ -2,7 +2,8 @@
 <ul>
   <li ng-repeat="ticket in index.tickets track by $index">
     <ul>
-      <li>{{ ticket }}</li>
+      <li><h2>{{ ticket.club }}</h2></li>
+      <li>held by {{ ticket.user.username }}</li>
     </ul>
   </li>
 </ul>
