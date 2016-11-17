@@ -50200,8 +50200,8 @@ if (typeof jQuery === 'undefined') {
 //    vm.user = data.user;
 //  });
 }
-"use strict";angular.module("seatSwap").controller("ticketsIndexCtrl",ticketsIndexCtrl);ticketsIndexCtrl.$inject=["Ticket","$stateParams","$state"];function ticketsIndexCtrl(Ticket,$stateParams,$state){var vm=this;vm.tickets=Ticket.query();}
 "use strict";angular.module("seatSwap").controller("gamesIndexCtrl",gamesIndexCtrl);gamesIndexCtrl.$inject=["Game","$stateParams","$state"];function gamesIndexCtrl(Game,$stateParams,$state){var vm=this;vm.games=Game.query();}
+"use strict";angular.module("seatSwap").controller("ticketsIndexCtrl",ticketsIndexCtrl);ticketsIndexCtrl.$inject=["Ticket","$stateParams","$state"];function ticketsIndexCtrl(Ticket,$stateParams,$state){var vm=this;vm.tickets=Ticket.query();}
 "use strict";angular.module("seatSwap").config(setUpInterceptor);setUpInterceptor.$inject=["$httpProvider"];function setUpInterceptor($httpProvider){return $httpProvider.interceptors.push("AuthInterceptor");}
 "use strict";angular.module("seatSwap").controller("loginCtrl",loginCtrl);loginCtrl.$inject=["User","CurrentUserService"];function loginCtrl(User,CurrentUserService){var vm=this;vm.login=function(){console.log(vm.user);User.login(vm.user).$promise.then(function(data){var user=data.user?data.user:null;if(user){CurrentUserService.saveUser(user);}});};}
 "use strict";angular.module("seatSwap").controller("mainCtrl",mainCtrl);mainCtrl.$inject=["$rootScope","CurrentUserService","$state"];function mainCtrl($rootScope,CurrentUserService,$state){var vm=this;vm.user=CurrentUserService.getUser();vm.logout=function(){event.preventDefault();CurrentUserService.clearUser();};$rootScope.$on("loggedIn",function(){vm.user=CurrentUserService.getUser();$state.go("ticketsIndex");});$rootScope.$on("loggedOut",function(){vm.user=null;$state.go("home");});}

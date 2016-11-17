@@ -1,3 +1,3 @@
 angular
   .module("seatSwap")
-  .constant("API", `http://localhost:3000/api`);
+  .constant("API", `https://seatswap-api.herokuapp.com/api`);
