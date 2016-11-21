@@ -1,7 +1,8 @@
-<h2>{{ show.user.username }}'s Profile</h2>
-<img id="ranepic" src="http://i.imgur.com/8SqDCWa.png" alt="" />
+<h1>{{ show.user.first_name }}'s Profile</h1>
 
-<h2>{{ show.user.username }}'s Tickets</h2>
+<!-- <img ng-src="{{show.user.image}}" alt="" /> -->
+
+<h2>{{ show.user.first_name }}'s Tickets</h2>
 
 
 <div ng-repeat="ticket in show.user.tickets track by $index">
@@ -13,7 +14,7 @@
 <h2>Games</h2>
 <div ng-repeat="game in show.user.games track by $index">
   <h4>{{ game.home }} vs {{ game.away }} on {{ game.date }}</h4>
-</li>
+</div>
 
 <h2>Sent Swaps</h2>
 <div ng-repeat="swap in show.user.sent_swaps track by $index">

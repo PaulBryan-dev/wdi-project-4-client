@@ -34,7 +34,7 @@ function ticketsNewCtrl(Ticket, $stateParams, $state, CurrentUserService) {
     .save({ ticket: vm.ticket })
     .$promise
     .then(data => {
-      $state.go("usersShow", { id: CurrentUserService.getUser()._id })
+      $state.go("usersShow", { id: CurrentUserService.getUser().id });
     });
   };
 }

@@ -22,6 +22,7 @@ function usersShowCtrl(User, $stateParams, $state, Swap) {
       .get($stateParams)
       .$promise
       .then(data => {
+        console.log(data);
         vm.user = data;
         runFilters();
       });
